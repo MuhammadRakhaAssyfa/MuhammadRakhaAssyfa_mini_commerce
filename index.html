@@ -10,18 +10,20 @@
     <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" 
     integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
 </head>
-<body>
+<body style="background-color: whitesmoke;">
     <div class="container">
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand">TOKO KONSOL GAME</a>
-            <form class="form-inline" id="formItem">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" id="keyword" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchItem">Search</button>
+        <nav class="navbar fixed-top" style="background-color: lightgray;">
+            <div class="container">
+            <a class="navbar-brand">Toko Konsol Game</a>
+            <form class="d-flex" role="search" id="formItem">
+                <input class="form-control me-2 mr-2" type="search" placeholder="Search" id="keyword" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit" id="searchItem">Search</button>
             </form>
             <button class="btn btn-primary" id="cart"><i class="fas fa-shopping-cart"></i>(0)</button>
+            </div>
         </nav>
         <div class="row">
-            <div class="row col-md-12 mt-2"  id="listBarang" >
+            <div class="row col-md-12 mt-5"  id="listBarang" >
                 
             </div>
         </div>
@@ -33,19 +35,24 @@
     
     <script>
         var items = [
-    ['001', 'PlayStation 5', 10000000, 'Konsol untuk bermain video game buatan Sonny.', '/gambar/ps5.jpg'], 
+    ['001', 'PlayStation 5', 9999999, 'Konsol untuk bermain video game buatan Sonny.', '/gambar/ps5.jpg'], 
     ['002', 'Nintendo Switch', 5500000, 'Konsol video game praktis yang bisa dimainkan dimana saja.', '/gambar/nintendo_switch.jpeg'],
-    ['003', 'Xbox', 4550000, 'Konsol video game buatan Microsoft.', '/gambar/xbox.jpeg'],
-    ['004', 'Meta Quest  3', 9925000, 'Virtual Reality untuk bermain game secara realistis.', '/gambar/mq3.jpg']
+    ['003', 'Xbox', 4550000, 'Konsol video game buatan Microsoft (Include Stik).', '/gambar/xbox.jpeg'],
+    ['004', 'Meta Quest  3', 9925000, 'Virtual Reality untuk bermain game secara realistis.', '/gambar/mq3.jpeg'],
+    ['005', 'NFS Pack', 999999, 'Bundle Pack series game Need For Speed.', '/gambar/nfs.jpeg'],
+    ['006', 'FIFA Pack', 899999, 'Bundle Pack series game FIFA berbagai edisi.', '/gambar/goat.jpeg'],
+    ['007', 'GTA Pack', 1999999, 'Bundle Pack series game Grand Thieft Auto.', '/gambar/Gta.jpeg'],
+    ['008', 'Stik PS5', 1900000, 'Stik untuk bermain game di konsol PlayStation 5.', '/gambar/sps5.jpeg'],
+    ['009', 'TV 85 Inch', 59999999, 'TV lebar yang nyaman untuk bermain game.', '/gambar/tipi.jpg']
     ]
 
     var listBarang = document.getElementById("listBarang");
 
     items.forEach(function(item) {
         listBarang.innerHTML += `
-            <div class="col-4 mt-2">
-                <div class="card" style="width: 18rem;">
-                     <img src="${item[4]}" class="card-img-top" height="200px" alt="${item[1]}">
+            <div class="col-4 mt-5">
+                <div class="card" style="width: 20rem;">
+                     <img src="${item[4]}" class="card-img-top" alt="${item[1]}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8">
                      <div class="card-body">
                          <h5 class="card-title">${item[1]}</h5>
                          <p class="card-text">${item[3]}</p>
@@ -70,8 +77,8 @@
 
     hasilFilter.forEach(function(item) {
         listBarang.innerHTML += `
-            <div class="col-4 mt-2">
-                <div class="card" style="width: 18rem;">
+            <div class="col-4 mt-5">
+                <div class="card" style="width: 20rem;">
                     <img src="${item[4]}" class="card-img-top" height="200px" alt="${item[1]}">
                     <div class="card-body">
                         <h5 class="card-title">${item[1]}</h5>
